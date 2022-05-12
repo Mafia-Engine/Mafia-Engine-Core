@@ -8,7 +8,7 @@ router.use('/mafiascum', MafiaScumRouter)
 router.get('/testimage', (req, res) => {
     let url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Italian_States-Venice_%281779-89%29_50_Zecchini.jpg/1000px-Italian_States-Venice_%281779-89%29_50_Zecchini.jpg';
     let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-    console.log(ip);
+    console.log(ip, '\n', req.headers);
     res.redirect(url);
 })
 router.get('/ping', (_req, res) => {
